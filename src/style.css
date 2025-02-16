@@ -1,0 +1,10 @@
+@tailwind base;
+
+
+.app{
+  .my-app {
+    h1 {
+      color: red;
+    }
+  }
+}
