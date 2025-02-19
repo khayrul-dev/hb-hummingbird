@@ -1,6 +1,6 @@
 {
   "name": "hb-hummingbird",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "keywords": [
     "ui components",
@@ -26,6 +26,10 @@
   "files": [
     "lib",
     "dist"
+  ],
+  "author": "Khayrul Islam",
+  "contributors": [
+    "Khayrul Islam (https://www.linkedin.com/in/khayrul-developer/)"
   ],
   "scripts": {
     "dev": "astro dev",
