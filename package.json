@@ -1,7 +1,13 @@
 {
-  "name": "hummingbird-starlight",
+  "name": "@hummingbird/core",
   "type": "module",
   "version": "0.0.1",
+  "license": "MIT",
+  "main": "lib/cjs/main.js",
+  "module": "lib/esm/main.js",
+  "types": "lib/esm/main.d.ts",
+  "style": "dist/hummingbird.min.css",
+  "repository": "https://github.com/themesberg/flowbite.git",
   "scripts": {
     "dev": "astro dev",
     "build:astro": "astro build",
