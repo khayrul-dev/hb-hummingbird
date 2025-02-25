@@ -1,6 +1,6 @@
 {
   "name": "hb-hummingbird",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "type": "module",
   "keywords": [
     "ui components",
@@ -22,7 +22,9 @@
     "import": "./lib/esm/main.js",
     "require": "./lib/cjs/main.js",
     "default": "./lib/esm/main.js",
-    "style": "./dist/hummingbird.min.css"
+    "css": "./dist/hummingbird.min.css",
+    "./dist/hummingbird.min.css": "./dist/hummingbird.min.css",
+    "./package.json": "./package.json"
   },
   "files": [
     "lib",
