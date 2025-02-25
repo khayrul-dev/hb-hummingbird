@@ -2,6 +2,7 @@ import path from "path";
 import { defineConfig } from "vite";
 import tailwindcss from "@tailwindcss/postcss";
 import dts from "vite-plugin-dts";
+import terser from "@rollup/plugin-terser";
 
 export default defineConfig({
   publicDir: false,
@@ -9,7 +10,7 @@ export default defineConfig({
     emptyOutDir: true,
     sourcemap: true,
     outDir: "dist",
-    minify: "terser",
+    minify: false,
     lib: {
       entry: path.resolve(__dirname, "src/main.ts"),
       name: "Hummingbird",
@@ -18,13 +19,15 @@ export default defineConfig({
     rollupOptions: {
       output: [
         {
-          format: "es",
+          format: "umd",
           entryFileNames: "hummingbird.js",
+          name: "Hummingbird",
         },
         {
           format: "umd",
           entryFileNames: "hummingbird.min.js",
           name: "Hummingbird",
+          plugins: [terser()],
         },
       ],
     },
