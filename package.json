@@ -1,6 +1,6 @@
 {
   "name": "hb-hummingbird",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "keywords": [
     "ui components",
@@ -16,34 +16,35 @@
   "main": "lib/esm/main.js",
   "module": "lib/esm/main.js",
   "types": "lib/esm/main.d.ts",
-  "style": "dist/hummingbird.min.css",
+  "style": "src/style.css",
   "repository": "https://github.com/khayrul-dev/hb-hummingbird",
   "exports": {
     ".": {
-      "style": "./dist/hummingbird.min.css",
+      "style": "./src/style.css",
       "import": "./lib/esm/main.js",
       "require": "./lib/cjs/main.js",
       "default": "./lib/esm/main.js"
     },
     "./package.json": "./package.json",
-    "./dist/hummingbird.min.css": "./dist/hummingbird.min.css",
-    "./dist/hummingbird.min": "./dist/hummingbird.min.css"
+    "./src/style.css": "./src/style.css",
+    "./src/style": "./src/style.css"
   },
   "files": [
     "lib",
-    "dist"
+    "dist",
+    "src/style.css"
   ],
   "author": "",
   "contributors": [
     "Khayrul Islam (https://www.linkedin.com/in/khayrul-developer/)"
   ],
   "scripts": {
-    "dev": "astro dev",
+    "dev": "vite",
     "build:astro": "astro build",
     "preview": "astro preview",
     "astro": "astro",
     "build:css": "cross-env NPM_ENV=development npx @tailwindcss/cli -i src/style.css -o dist/hummingbird.css",
-    "build:css:min": "NODE_ENV=production postcss src/style.css -o dist/hummingbird.min.css",
+    "build:css:min": "cross-env NPM_ENV=production npx @tailwindcss/cli -i src/style.css -o dist/hummingbird.min.css --minify",
     "build:js": "tsc && vite build",
     "build:dist": "vite build && npm run build:css && npm run build:css:min",
     "build:lib": "vite build --config vite.lib.config.js"
