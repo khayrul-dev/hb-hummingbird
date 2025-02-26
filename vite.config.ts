@@ -1,8 +1,8 @@
 import path from "path";
 import { defineConfig } from "vite";
-import tailwindcss from "@tailwindcss/postcss";
 import dts from "vite-plugin-dts";
 import terser from "@rollup/plugin-terser";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   publicDir: false,
@@ -37,10 +37,6 @@ export default defineConfig({
       insertTypesEntry: true,
       include: [path.resolve(__dirname, "src/*")],
     }),
+    tailwindcss(),
   ],
-  css: {
-    postcss: {
-      plugins: [tailwindcss],
-    },
-  },
 });
