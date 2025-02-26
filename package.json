@@ -1,6 +1,6 @@
 {
   "name": "hb-hummingbird",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "type": "module",
   "keywords": [
     "ui components",
@@ -19,7 +19,15 @@
   "style": "dist/hummingbird.min.css",
   "repository": "https://github.com/khayrul-dev/hb-hummingbird",
   "exports": {
-    "style": "./dist/hummingbird.min.css"
+    ".": {
+      "style": "./dist/hummingbird.min.css",
+      "import": "./lib/esm/main.js",
+      "require": "./lib/cjs/main.js",
+      "default": "./lib/esm/main.js"
+    },
+    "./package.json": "./package.json",
+    "./dist/hummingbird.min.css": "./dist/hummingbird.min.css",
+    "./dist/hummingbird.min": "./dist/hummingbird.min.css"
   },
   "files": [
     "lib",
