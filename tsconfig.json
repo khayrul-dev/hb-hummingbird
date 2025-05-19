@@ -1,4 +1,15 @@
 {
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/types/**/*.d.ts", ".astro/types.d.ts"],
-  "exclude": ["node_modules", "dist", "lib", "public"],
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "strict": true,
+    "declaration": true,
+    "declarationDir": "lib",
+    "emitDeclarationOnly": false,
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "outDir": "lib"
+  },
+  "include": ["src"]
 }
