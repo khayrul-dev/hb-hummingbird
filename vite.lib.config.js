@@ -47,8 +47,10 @@ export default defineConfig({
   },
   plugins: [
     dts({
+      // entryRoot: "src",
       outDir: ["lib/cjs", "lib/esm"],
       include: ["src"],
+      // rollupTypes: true,
     }),
   ],
 });

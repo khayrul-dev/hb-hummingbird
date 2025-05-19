@@ -1,6 +1,6 @@
 {
   "name": "hb-hummingbird",
-  "version": "0.2.1",
+  "version": "0.2.4",
   "type": "module",
   "keywords": [
     "ui components",
@@ -23,11 +23,16 @@
   },
   "exports": {
     ".": {
+      "types": "./lib/esm/main.d.ts",
       "style": "./src/style.css",
       "import": "./lib/esm/main.js",
       "require": "./lib/cjs/main.js",
-      "default": "./lib/esm/main.js",
-      "types": "./lib/esm/main.d.ts"
+      "default": "./lib/esm/main.js"
+    },
+    "./modal": {
+      "types": "./lib/esm/components/modal.d.ts",
+      "import": "./lib/esm/components/modal.js",
+      "require": "./lib/cjs/components/modal.js"
     },
     "./package.json": "./package.json",
     "./src/style.css": "./src/style.css",
