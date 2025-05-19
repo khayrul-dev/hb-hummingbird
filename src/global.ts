@@ -1,11 +1,9 @@
-import HummingbirdOffcanvas from "./components/offcanvas";
-import HummingbirdModal from "./components/modal";
-import HummingbirdCarousel from "./components/carousel";
+import Offcanvas from "./components/offcanvas";
+import Modal from "./components/modal";
 
 declare global {
   interface Window {
-    HummingbirdOffcanvas: typeof HummingbirdOffcanvas;
-    HummingbirdModal: typeof HummingbirdModal;
-    HummingbirdCarousel: typeof HummingbirdCarousel;
+    Modal: typeof Modal;
+    Offcanvas: typeof Offcanvas;
   }
 }

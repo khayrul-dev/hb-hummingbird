@@ -13,7 +13,7 @@ export default defineConfig({
         main: resolve(__dirname, "src/main.ts"),
         modal: resolve(__dirname, "src/components/modal.ts"),
         offcanvas: resolve(__dirname, "src/components/offcanvas.ts"),
-        carousel: resolve(__dirname, "src/components/carousel.ts"),
+        // carousel: resolve(__dirname, "src/components/carousel.ts"),
         global: resolve(__dirname, "src/global.ts"),
       },
       formats: ["cjs", "es"],
