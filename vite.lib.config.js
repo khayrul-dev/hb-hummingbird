@@ -1,5 +1,5 @@
+import path, { resolve } from "path";
 import { defineConfig } from "vite";
-import path from "path";
 import dts from "vite-plugin-dts";
 
 export default defineConfig({
@@ -10,32 +10,37 @@ export default defineConfig({
     sourcemap: true,
     lib: {
       entry: {
-        main: path.resolve(__dirname, "src/main.ts"),
-        global: path.resolve(__dirname, "src/global.ts"),
-        modal: path.resolve(__dirname, "src/components/modal.ts"),
-        offcanvas: path.resolve(__dirname, "src/components/offcanvas.ts"),
+        main: resolve(__dirname, "src/main.ts"),
+        modal: resolve(__dirname, "src/components/modal.ts"),
+        // offcanvas: resolve(__dirname, "src/components/offcanvas.ts"),
+        // carousel: resolve(__dirname, "src/components/carousel.ts"),
+        global: resolve(__dirname, "src/global.ts"),
       },
-      formats: ["es", "cjs"],
+      formats: ["cjs", "es"],
     },
     rollupOptions: {
       output: [
         {
-          format: "es",
-          dir: "lib/esm",
-          entryFileNames: (chunkInfo) =>
-            chunkInfo.facadeModuleId?.includes("components")
-              ? "components/[name].js"
-              : "[name].js",
-          chunkFileNames: "chunks/[name].js",
-        },
-        {
           format: "cjs",
           dir: "lib/cjs",
-          entryFileNames: (chunkInfo) =>
-            chunkInfo.facadeModuleId?.includes("components")
-              ? "components/[name].js"
-              : "[name].js",
-          chunkFileNames: "chunks/[name].js",
+          entryFileNames: (chunkInfo) => {
+            if (chunkInfo.facadeModuleId?.includes("components")) {
+              return "components/[name].js";
+            }
+            return "[name].js";
+          },
+          chunkFileNames: "dom/[name].js",
+        },
+        {
+          format: "es",
+          dir: "lib/esm",
+          entryFileNames: (chunkInfo) => {
+            if (chunkInfo.facadeModuleId?.includes("components")) {
+              return "components/[name].js";
+            }
+            return "[name].js";
+          },
+          chunkFileNames: "dom/[name].js",
         },
       ],
     },
